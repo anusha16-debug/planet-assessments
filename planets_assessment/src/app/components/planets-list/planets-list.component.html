@@ -1,0 +1,41 @@
+<div class="text-white mb-3">
+    <span>Note: check the box to add planet to your favourites</span>
+   
+</div>
+<div class="mb-3">
+    <button type="button" class="bg-purple text-white add-button"  (click)="openPopUp()">Add Planet</button>
+</div>
+<ul class="list-group w-100" *ngFor="let planet of planetsLists">
+    <li class="list-group-item d-flex justify-content-between w-100">
+     <span>
+         {{planet.name}}
+     </span>
+    <span class="cursor-pointer">
+        <input (change)="addToFavourites(planet)" type="checkbox" [checked]="planet.isFavourite">
+    </span>
+    </li>
+</ul>
+
+<div class="modal" id="planetAddPopUp" [ngClass]="{'d-block': showHideModal}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Planet</h5>
+          <button type="button" class="close" (click)="closeModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="planetname">Planet Name:</label>
+                    <input type="text" class="form-control" id="planetname" [(ngModel)]="planetName" placeholder="Enter planet name" [ngModelOptions]="{standalone: true}">
+                  </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn text-white bg-purple" (click)="addNewPlanet()" [disabled]="!planetName">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>

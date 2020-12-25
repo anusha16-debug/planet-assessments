@@ -1,0 +1,8 @@
+.cursor-pointer{
+    cursor: pointer;
+}
+.add-button{
+    padding: 9px;
+    border-radius: 15px;
+}
+#planetAddPopUp{background: rgba(0,0,0,0.5)}

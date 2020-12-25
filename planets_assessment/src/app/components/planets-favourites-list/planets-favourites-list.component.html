@@ -1,0 +1,16 @@
+
+<div class="text-white" *ngIf="!favouritesList">Oops No Favourites Found!!!</div>
+
+<div *ngIf="favouritesList">
+    <ul class="list-group w-100" *ngFor="let planet of favouritesList">
+        <li class="list-group-item d-flex justify-content-between w-100">
+         <span>
+             {{planet.name}}
+         </span>
+         <span class="cursor-pointer">
+            <img src="assets/like_highlighted.png" alt="favourite">
+        </span>
+        </li>
+    </ul>
+</div>
+
