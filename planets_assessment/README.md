@@ -1,4 +1,4 @@
-# AngularTodoApplication
+# Angular Planets Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
 
